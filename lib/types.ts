@@ -1,10 +1,11 @@
 import { Message } from 'ai'
+import mongoose from 'mongoose'
 
 export interface Chat extends Record<string, any> {
-  id: string
+  // id: string
+  userId: mongoose.Schema.Types.ObjectId
   title: string
   createdAt: Date
-  userId: string
   path: string
   messages: Message[]
   sharePath?: string

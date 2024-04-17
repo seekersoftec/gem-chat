@@ -3,10 +3,9 @@
 import { signIn } from '@/auth'
 import { ResultCode, getStringFromBuffer } from '@/lib/utils'
 import { z } from 'zod'
-// import { kv } from '@vercel/kv'
 import { getUser } from '../login/actions'
 import { AuthError } from 'next-auth'
-import USERS from '@/models/users.model'
+import USERS from '@/lib/models/users.model'
 
 export async function createUser(
   email: string,
@@ -22,13 +21,11 @@ export async function createUser(
     }
   } else {
     const user = {
-      // id: crypto.randomUUID(),
       email,
       password: hashedPassword,
       salt
     }
 
-    // await kv.hmset(`user:${email}`, user)
     const newUser = await USERS.create(user)
     if (!newUser) {
       return {

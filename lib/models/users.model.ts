@@ -1,4 +1,4 @@
-import { User } from '@/lib/types'
+import { type User } from '@/lib/types'
 import mongoose, { Model, Schema, model, models } from 'mongoose'
 
 export interface IUser extends User {}
@@ -9,7 +9,7 @@ export interface UserDocument extends IUser, mongoose.Document {
   comparePassword: (candidatePassword: string) => Promise<boolean>
 }
 
-const userSchema = new Schema(
+const userSchema = new Schema<IUser>(
   {
     email: {
       type: String,

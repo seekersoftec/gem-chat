@@ -58,16 +58,9 @@ export function Header() {
       </div>
       <div className="flex items-center justify-end gap-2">
         <Button asChild size="sm" variant="ghost">
-          <Link href="/translate">
-            <IconUser />
-            <span className="hidden ml-2 md:flex">Translator</span>
-          </Link>
-        </Button>
-
-        <Button asChild size="sm" variant="ghost">
           <a
             target="_blank"
-            href="https://github.com/seekersoftec/gem-chat-app"
+            href="https://github.com/seekersoftec/gem-chat"
             rel="noopener noreferrer"
           >
             <IconGitHub />
@@ -75,14 +68,11 @@ export function Header() {
           </a>
         </Button>
         <Button asChild size="sm" className="rounded-lg gap-1">
-          <a
-            href="https://vercel.com/templates/next.js/gemini-ai-chatbot"
-            target="_blank"
-          >
+          <Link href="/translate">
             <IconVercel className="size-3" />
-            <span className="hidden sm:block">Deploy to Vercel</span>
-            <span className="sm:hidden">Deploy</span>
-          </a>
+            <span className="hidden sm:block">Translator</span>
+            <span className="sm:hidden">Translate</span>
+          </Link>
         </Button>
       </div>
     </header>

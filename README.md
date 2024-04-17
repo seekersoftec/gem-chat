@@ -19,3 +19,7 @@ https://github.com/nilooy/geminichatui
 https://github.com/vercel-labs/gemini-chatbot
 
 https://github.com/colbyfayock/my-translator-app/
+
+https://stackoverflow.com/questions/16533439/understanding-mongoose-schema-types-mixed
+
+https://github.com/Automattic/mongoose/issues/12530

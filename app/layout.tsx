@@ -10,13 +10,15 @@ import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 import { Inter } from 'next/font/google'
 import dbClient from '@/lib/mongoose'
-import USERS from '@/models/users.model'
+import USERS from '@/lib/models/users.model'
+import CHATS from '@/lib/models/chats.model'
 
 dbClient
   .then(async () => {
     console.log('Connected to MongoDB')
 
     await USERS.init()
+    await CHATS.init()
   })
   .catch(err => console.error(err))
 
