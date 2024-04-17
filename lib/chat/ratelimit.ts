@@ -1,13 +1,13 @@
 import { Ratelimit } from '@upstash/ratelimit'
-import { kv } from '@vercel/kv'
+import { Redis } from '@upstash/redis'
 import { redirect } from 'next/navigation'
 import { headers } from 'next/headers'
 
-const geminiRatelimit = new Ratelimit({
-  redis: kv,
+const appRatelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
   limiter: Ratelimit.slidingWindow(60, '1 m'),
   analytics: true,
-  prefix: 'gemini_ratelimit'
+  prefix: 'app_ratelimit'
 })
 
 function getIP() {
@@ -15,7 +15,7 @@ function getIP() {
 }
 
 export async function rateLimit() {
-  const limit = await geminiRatelimit.limit(getIP())
+  const limit = await appRatelimit.limit(getIP())
   if (!limit.success) {
     redirect('/waiting-room')
   }
