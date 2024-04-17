@@ -8,10 +8,14 @@ export function EmptyScreen() {
           Gem
         </h1>
         <p className="leading-normal text-zinc-900">
-          This is an open source AI chatbot app built with{' '}
-          <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>, the{' '}
+          This is an open-source AI chatbot app built with{' '}
+          <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>,{' '}
           <ExternalLink href="https://sdk.vercel.ai">
             Vercel AI SDK
+          </ExternalLink>
+          , <ExternalLink href="https://www.mongodb.com">MongoDB</ExternalLink>,
+          <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">
+            Speech Recognition
           </ExternalLink>
           , and{' '}
           <ExternalLink href="https://ai.google.dev">
