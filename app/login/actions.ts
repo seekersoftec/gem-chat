@@ -8,7 +8,10 @@ import USERS from '@/lib/models/users.model'
 
 export async function getUser(email: string) {
   const user = await USERS.findOne({ email: email })
-  return user
+  if (!user) {
+    return null
+  }
+  return user.toJSON()
 }
 
 interface Result {

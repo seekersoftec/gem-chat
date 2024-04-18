@@ -42,7 +42,7 @@ export async function getChat(id: string, userId: string) {
     return null
   }
 
-  return chat
+  return chat.toJSON()
 }
 
 export async function removeChat({ id, path }: { id: string; path: string }) {
