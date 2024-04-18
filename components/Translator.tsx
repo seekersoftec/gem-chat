@@ -125,7 +125,7 @@ const Translator = () => {
         <div className="bg-zinc-800 p-4 border-b-4 border-zinc-950">
           <p className="flex items-center gap-3">
             <span
-              className={`block rounded-full w-5 h-5 flex-shrink-0 flex-grow-0 ${
+              className={`block rounded-full size-5 shrink-0 grow-0${
                 isActive ? 'bg-red-500' : 'bg-red-900'
               } `}
             >
@@ -134,7 +134,7 @@ const Translator = () => {
               </span>
             </span>
             <span
-              className={`block rounded w-full h-5 flex-grow-1 ${
+              className={`block rounded w-full h-5 grow-1 ${
                 isSpeechDetected ? 'bg-green-500' : 'bg-green-900'
               }`}
             >
@@ -174,7 +174,7 @@ const Translator = () => {
             </form>
             <p>
               <button
-                className={`w-full h-full uppercase font-semibold text-sm  ${
+                className={`size-full uppercase font-semibold text-sm${
                   isActive
                     ? 'text-white bg-red-500'
                     : 'text-zinc-400 bg-zinc-900'
